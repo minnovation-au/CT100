@@ -1,5 +1,5 @@
 # CT100
--
+
 Smart CT Firmware for Landfill Counter.
 
 To be used with Pycom LoPy4 chipset in AlphaX CT range of devices.
