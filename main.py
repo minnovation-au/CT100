@@ -4,7 +4,7 @@ import utime, ubinascii, socket, pycom
 from network import LoRa
 
 pycom.heartbeat(False)
-pycom.rgbled(0x007f00) # yellow
+pycom.rgbled(0x007f00) # Green
 
 pin = Pin('P10', mode=Pin.IN, pull=Pin.PULL_DOWN)
 data = '0'
@@ -28,7 +28,7 @@ while (pin() == 1):
     print("Waiting to Reset")
     utime.sleep_ms(1000)
 
-print("Going to Sleep")
+#print("Going to Sleep")
 machine.pin_deepsleep_wakeup(pins=['P10'], mode=machine.WAKEUP_ANY_HIGH )
 machine.deepsleep()
 #utime.sleep_ms(1000)
