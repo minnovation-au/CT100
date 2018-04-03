@@ -4,9 +4,7 @@ import utime, ubinascii, socket, pycom
 from network import LoRa
 
 pycom.heartbeat(False)
-<<<<<<< HEAD
 pycom.rgbled(0x007f00) # Turn on Green LED
-pycom.rgbled(0x007f00) # Green
 
 pin = Pin('P10', mode=Pin.IN, pull=Pin.PULL_DOWN)
 chrono = Timer.Chrono()
