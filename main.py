@@ -8,6 +8,7 @@ pycom.rgbled(0x007f00) # Turn on Green LED
 
 pin = Pin('P10', mode=Pin.IN, pull=Pin.PULL_DOWN)
 chrono = Timer.Chrono()
+chrono.start()
 data = '0'
 
 lora = LoRa(mode=LoRa.LORA, region=LoRa.AU915, public=False)
