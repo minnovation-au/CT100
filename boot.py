@@ -22,8 +22,17 @@ pycom.rgbled(0x007f00) # Turn on Green LED
 w = WLAN()
 w.deinit()
 
+################# SIGFOX ###################
+#from network import Sigfox
+#sigfox = Sigfox(mode=Sigfox.SIGFOX, rcz=Sigfox.RCZ4)
+#ss = socket.socket(socket.AF_SIGFOX, socket.SOCK_RAW)
+#ss.setblocking(True)
+
+################# LORA #####################
+from network import LoRa
 lora = LoRa(mode=LoRa.LORA, region=LoRa.AU915)
 sl = socket.socket(socket.AF_LORA, socket.SOCK_RAW)
+sl.setblocking(False)
 
 sd = SD()
 
