@@ -45,7 +45,7 @@ def aggregate():
         pycom.nvs_set('val', 0)
     print('Deepsleep Remaining: '+str(machine.remaining_sleep_time()))
     print('New Aggregate: '+str(pycom.nvs_get('val')))
-    print('Current Message ID: '+str(pycom.nvs_get('msgID')))
+    print('Current Message ID: '+str(lora.stats()[9]))
 
 def ammend_to_file():
     try:
@@ -64,7 +64,7 @@ def ammend_to_file():
     except:
         pass
     f = open('/flash/log.txt', 'a')
-    f.write(str(pycom.nvs_get('msgID')))
+    f.write(str(lora.stats()[9]))
     f.write(',')
     f.write(str(pycom.nvs_get('val')))
     f.write('\n')
@@ -104,10 +104,7 @@ def LoRaSend(val):
     #print('Send Success')
     ammend_to_file()
     pycom.nvs_set('val', 0)
-    try:
-        pycom.nvs_set('msgID', int(pycom.nvs_get('msgID'))+1)
-    except:
-        pycom.nvs_set('msgID', 0)
+ 
 
 def paused():
     while (pin() == 1):
