@@ -13,11 +13,6 @@ from machine import SD, WDT, deepsleep, Pin, Timer
 from network import LoRa, WLAN
 from crypto import AES
 
-### Turn off LED & Wifi to save power
-w = WLAN()
-w.deinit() ##Switch Off WLAN
-pycom.heartbeat(False)
-
 iv = crypto.getrandbits(128) # hardware generated random IV (never reuse it)
 gc.enable()
 wdt = WDT(timeout=10000)
